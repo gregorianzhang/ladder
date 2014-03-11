@@ -6,4 +6,4 @@
 ./ss-local -f ./ss5.pid -s 46.137.233.181 -p 51280 -l 58115 -k qwersdSERsdf -m rc4 
 ./haproxy -f ./haproxy.cfg -p ./haproxy.pid
 ./cow &
-Please add file:///$(pwd)/ladder.pac into your browser/system connection settings. 
+echo "Please add file://$(pwd)/ladder.pac into your browser/system connection settings." 
