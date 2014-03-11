@@ -16,7 +16,7 @@ case $os in
     "OpenBSD")
         make USE_OPENSSL=1 TARGET=openbsd
         ;;
-    "Cygwin")
+    "CYGWIN_NT-6.1" | "CYGWIN_NT-6.0" | "CYGWIN_NT-7.0")
         make USE_OPENSSL=1 TARGET=cygwin
         ;;
     "Linux")
@@ -56,8 +56,8 @@ case $os in
         os="linux"
         ;;
     *)
-        echo "$os currently has no precompiled binary"
-        exit 1
+        os="win"
+        ;;
 esac
 bin=cow-$os$arch-$version
 binary_url="http://dl.chenyufei.info/cow/$bin.gz"
