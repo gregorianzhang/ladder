@@ -72,4 +72,6 @@ wget -O $HOME/.cow/rc https://raw.github.com/missdeer/ladder/master/cowrc
 wget -O ./haproxy.cfg https://raw.github.com/missdeer/ladder/master/haproxy.cfg
 wget -O ./ladder.pac https://raw.github.com/missdeer/ladder/master/ladder.pac
 wget -O ./start.sh https://raw.github.com/missdeer/ladder/master/start.sh
+chmod a+x ./start.sh
 wget -O ./stop.sh https://raw.github.com/missdeer/ladder/master/stop.sh
+chmod a+x ./stop.sh
