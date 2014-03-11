@@ -70,4 +70,6 @@ rm -rf haproxy-ss-* shadowsocks-libev/
 mkdir $HOME/.cow
 wget -O $HOME/.cow/rc https://raw.github.com/missdeer/ladder/master/cowrc
 wget -O ./haproxy.cfg https://raw.github.com/missdeer/ladder/master/haproxy.cfg
-wget -O ladder.pac https://raw.github.com/missdeer/ladder/master/ladder.pac
+wget -O ./ladder.pac https://raw.github.com/missdeer/ladder/master/ladder.pac
+wget -O ./start.sh https://raw.github.com/missdeer/ladder/master/start.sh
+wget -O ./stop.sh https://raw.github.com/missdeer/ladder/master/stop.sh
