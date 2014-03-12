@@ -48,6 +48,7 @@ case $arch in
         ;;
 esac
 
+postfix="gz"
 case $os in
     "Darwin")
         os="mac"
@@ -57,10 +58,11 @@ case $os in
         ;;
     *)
         os="win"
+        postfix="zip"
         ;;
 esac
 bin=cow-$os$arch-$version
-binary_url="http://dl.chenyufei.info/cow/$bin.gz"
+binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
 wget -t0 -T10 -O./cow.gz "$binary_url"
 gunzip cow.gz 
 chmod a+x cow 
