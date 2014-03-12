@@ -67,8 +67,7 @@ chmod a+x cow
 cp shadowsocks-libev/src/ss-local ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy ./
 rm -rf haproxy-ss-* shadowsocks-libev/
-mkdir $HOME/.cow
-wget -O $HOME/.cow/rc https://raw.github.com/missdeer/ladder/master/cowrc
+wget -O ./cowrc https://raw.github.com/missdeer/ladder/master/cowrc
 wget -O ./haproxy.cfg https://raw.github.com/missdeer/ladder/master/haproxy.cfg
 wget -O ./ladder.pac https://raw.github.com/missdeer/ladder/master/ladder.pac
 wget -O ./start.sh https://raw.github.com/missdeer/ladder/master/start.sh
