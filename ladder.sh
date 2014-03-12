@@ -64,8 +64,8 @@ binary_url="http://dl.chenyufei.info/cow/$bin.gz"
 wget -t0 -T10 -O./cow.gz "$binary_url"
 gunzip cow.gz 
 chmod a+x cow 
-cp shadowsocks-libev/src/ss-local ./
-cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy ./
+cp shadowsocks-libev/src/ss-local* ./
+cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
 wget -O ./cowrc https://raw.github.com/missdeer/ladder/master/cowrc
 wget -O ./haproxy.cfg https://raw.github.com/missdeer/ladder/master/haproxy.cfg
