@@ -63,16 +63,23 @@ case $os in
 esac
 bin=cow-$os$arch-$version
 binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
-wget -t0 -T10 -O./cow.gz "$binary_url"
-gunzip cow.gz 
-chmod a+x cow 
+wget -t0 -T10 -O./cow.$postfix "$binary_url"
 cp shadowsocks-libev/src/ss-local* ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
 wget -O ./cowrc https://raw.github.com/missdeer/ladder/master/cowrc
 wget -O ./haproxy.cfg https://raw.github.com/missdeer/ladder/master/haproxy.cfg
 wget -O ./ladder.pac https://raw.github.com/missdeer/ladder/master/ladder.pac
+if [[ "$os" == "win" ]]
+then
+unzip cow.$postfix 
+wget -O ./start.bat https://raw.github.com/missdeer/ladder/master/start.bat
+wget -O ./stop.bat https://raw.github.com/missdeer/ladder/master/stop.bat
+else
+gunzip cow.$postfix 
+chmod a+x cow 
 wget -O ./start.sh https://raw.github.com/missdeer/ladder/master/start.sh
 chmod a+x ./start.sh
 wget -O ./stop.sh https://raw.github.com/missdeer/ladder/master/stop.sh
 chmod a+x ./stop.sh
+fi
