@@ -72,14 +72,14 @@ wget -O ./haproxy.cfg https://raw.github.com/missdeer/ladder/master/haproxy.cfg
 wget -O ./ladder.pac https://raw.github.com/missdeer/ladder/master/ladder.pac
 if [[ "$os" == "win" ]]
 then
-unzip cow.$postfix 
-wget -O ./start.bat https://raw.github.com/missdeer/ladder/master/start.bat
-wget -O ./stop.bat https://raw.github.com/missdeer/ladder/master/stop.bat
+    unzip cow.$postfix 
+    wget -O ./start.bat https://raw.github.com/missdeer/ladder/master/start.bat
+    wget -O ./stop.bat https://raw.github.com/missdeer/ladder/master/stop.bat
 else
-gunzip cow.$postfix 
-chmod a+x cow 
-wget -O ./start.sh https://raw.github.com/missdeer/ladder/master/start.sh
-chmod a+x ./start.sh
-wget -O ./stop.sh https://raw.github.com/missdeer/ladder/master/stop.sh
-chmod a+x ./stop.sh
+    gunzip cow.$postfix 
+    chmod a+x cow 
+    wget -O ./start.sh https://raw.github.com/missdeer/ladder/master/start.sh
+    chmod a+x ./start.sh
+    wget -O ./stop.sh https://raw.github.com/missdeer/ladder/master/stop.sh
+    chmod a+x ./stop.sh
 fi
