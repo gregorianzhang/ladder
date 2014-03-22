@@ -67,9 +67,9 @@ wget -t0 -T10 -O./cow.$postfix "$binary_url"
 cp shadowsocks-libev/src/ss-local* ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
-wget -O ./cowrc https://raw.github.com/missdeer/ladder/master/cowrc
-wget -O ./haproxy.cfg https://raw.github.com/missdeer/ladder/master/haproxy.cfg
-wget -O ./ladder.pac https://raw.github.com/missdeer/ladder/master/ladder.pac
+wget -O ./cowrc --no-check-certificate https://raw.github.com/missdeer/ladder/master/cowrc
+wget -O ./haproxy.cfg --no-check-certificate https://raw.github.com/missdeer/ladder/master/haproxy.cfg
+wget -O ./ladder.pac --no-check-certificate https://raw.github.com/missdeer/ladder/master/ladder.pac
 if [[ "$os" == "win" ]]
 then
     unzip cow.$postfix 
@@ -78,8 +78,8 @@ then
 else
     gunzip cow.$postfix 
     chmod a+x cow 
-    wget -O ./start.sh https://raw.github.com/missdeer/ladder/master/start.sh
+    wget -O ./start.sh --no-check-certificate https://raw.github.com/missdeer/ladder/master/start.sh
     chmod a+x ./start.sh
-    wget -O ./stop.sh https://raw.github.com/missdeer/ladder/master/stop.sh
+    wget -O ./stop.sh --no-check-certificate https://raw.github.com/missdeer/ladder/master/stop.sh
     chmod a+x ./stop.sh
 fi
