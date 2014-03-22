@@ -78,8 +78,8 @@ then
 else
     gunzip cow.$postfix 
     chmod a+x cow 
-    wget -O ./start.sh --no-check-certificate https://raw.github.com/missdeer/ladder/master/start.sh
-    chmod a+x ./start.sh
-    wget -O ./stop.sh --no-check-certificate https://raw.github.com/missdeer/ladder/master/stop.sh
-    chmod a+x ./stop.sh
 fi
+wget -O ./start.sh --no-check-certificate https://raw.github.com/missdeer/ladder/master/start.sh
+chmod a+x ./start.sh
+wget -O ./stop.sh --no-check-certificate https://raw.github.com/missdeer/ladder/master/stop.sh
+chmod a+x ./stop.sh
