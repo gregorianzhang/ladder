@@ -18,7 +18,7 @@ ladder
 * 127.0.0.1:58118 一个http代理端口，可代理http和https协议，后端连接58117端口，如果能直接连通，则直连，在不能直接连接的时候走58117端口；
 * 127.0.0.1:58119 一个http代理端口，可代理http协议，后端连接Google压缩代理；
 
-推荐在浏览器代理设置中使用ladder.pac，此pac文件根据autoproxy项目的gfwlist列表，配置只有被墙的域名才走代理，http地址走58119端口，https地址走58118端口，其他地址直连。
+推荐在浏览器代理设置中使用ladder.pac，此pac文件根据autoproxy项目的gfwlist列表，配置只有被墙的域名才走代理，http地址走58119端口，https地址走58118端口，其他地址直连。你可以使用已经下载到本地的ladder.pac文件路径，也可以使用 http://git.io/ladder.pac 这个URL指向github上最新的文件内容。
 
 # 感谢 
 * [cow](https://github.com/cyfdecyf/cow)
