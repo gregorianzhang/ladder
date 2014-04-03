@@ -11,7 +11,7 @@ cd $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")
 os=`uname -s`
 case $os in
     "FreeBSD")
-        make USE_OPENSSL=1 TARGET=freebsd
+        gmake USE_OPENSSL=1 TARGET=freebsd
         ;;
     "OpenBSD")
         make USE_OPENSSL=1 TARGET=openbsd
@@ -67,19 +67,19 @@ wget -t0 -T10 -O./cow.$postfix "$binary_url"
 cp shadowsocks-libev/src/ss-local* ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
-wget -O ./cowrc https://github.com/missdeer/ladder/raw/master/cowrc
-wget -O ./haproxy.cfg https://github.com/missdeer/ladder/raw/master/haproxy.cfg
-wget -O ./ladder.pac https://github.com/missdeer/ladder/raw/master/ladder.pac
+curl -3 -L -o ./cowrc https://github.com/missdeer/ladder/raw/master/cowrc
+curl -3 -L -o ./haproxy.cfg https://github.com/missdeer/ladder/raw/master/haproxy.cfg
+curl -3 -L -o ./ladder.pac https://github.com/missdeer/ladder/raw/master/ladder.pac
 if [[ "$os" == "win" ]]
 then
     unzip cow.$postfix 
-    wget -O ./start.bat https://github.com/missdeer/ladder/raw/master/start.bat
-    wget -O ./stop.bat https://github.com/missdeer/ladder/raw/master/stop.bat
+    curl -3 -L -o ./start.bat https://github.com/missdeer/ladder/raw/master/start.bat
+    curl -3 -L -o ./stop.bat https://github.com/missdeer/ladder/raw/master/stop.bat
 else
     gunzip cow.$postfix 
     chmod a+x cow 
 fi
-wget -O ./start.sh https://github.com/missdeer/ladder/raw/master/start.sh
+curl -3 -L -o ./start.sh https://github.com/missdeer/ladder/raw/master/start.sh
 chmod a+x ./start.sh
-wget -O ./stop.sh https://github.com/missdeer/ladder/raw/master/stop.sh
+curl -3 -L -o ./stop.sh https://github.com/missdeer/ladder/raw/master/stop.sh
 chmod a+x ./stop.sh
