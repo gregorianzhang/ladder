@@ -67,6 +67,13 @@ rm -rf haproxy-ss-* shadowsocks-libev/
 curl -3 -L -o ./cowrc https://github.com/missdeer/ladder/raw/master/cowrc
 curl -3 -L -o ./haproxy.cfg https://github.com/missdeer/ladder/raw/master/haproxy.cfg
 curl -3 -L -o ./ladder.pac https://github.com/missdeer/ladder/raw/master/ladder.pac
+curl -3 -L -o ./start.sh https://github.com/missdeer/ladder/raw/master/start.sh
+chmod a+x ./start.sh
+curl -3 -L -o ./stop.sh https://github.com/missdeer/ladder/raw/master/stop.sh
+chmod a+x ./stop.sh
+bin=cow-$os$arch-$version
+binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
+wget -t0 -T10 -O./cow.$postfix "$binary_url"
 if [[ "$os" == "win" ]]
 then
     unzip cow.$postfix 
@@ -76,10 +83,3 @@ else
     gunzip cow.$postfix 
     chmod a+x cow 
 fi
-curl -3 -L -o ./start.sh https://github.com/missdeer/ladder/raw/master/start.sh
-chmod a+x ./start.sh
-curl -3 -L -o ./stop.sh https://github.com/missdeer/ladder/raw/master/stop.sh
-chmod a+x ./stop.sh
-bin=cow-$os$arch-$version
-binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
-wget -t0 -T10 -O./cow.$postfix "$binary_url"
