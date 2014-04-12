@@ -61,9 +61,6 @@ case $os in
         postfix="zip"
         ;;
 esac
-bin=cow-$os$arch-$version
-binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
-wget -t0 -T10 -O./cow.$postfix "$binary_url"
 cp shadowsocks-libev/src/ss-local* ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
@@ -83,3 +80,6 @@ curl -3 -L -o ./start.sh https://github.com/missdeer/ladder/raw/master/start.sh
 chmod a+x ./start.sh
 curl -3 -L -o ./stop.sh https://github.com/missdeer/ladder/raw/master/stop.sh
 chmod a+x ./stop.sh
+bin=cow-$os$arch-$version
+binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
+wget -t0 -T10 -O./cow.$postfix "$binary_url"
