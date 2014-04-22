@@ -1,5 +1,4 @@
 /**
- * gfwlist2pac 0.0.1 http://codelife.me
  * Generated: Mon, 10 Mar 2014 03:17:24 GMT
  * GFWList Last-Modified: Sat, 08 Mar 2014 08:05:44 GMT
  */
@@ -2448,6 +2447,8 @@ var domains = {
 
 function FindProxyForURL(url, host) {
     var D = "DIRECT; PROXY 127.0.0.1:58118";
+    if (url.substring(0,4) != "http")
+      return D;
     var lastPos;
     do {
         if (domains.hasOwnProperty(host)) {
