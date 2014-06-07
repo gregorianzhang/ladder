@@ -9,6 +9,13 @@ var P2 = "PROXY 127.0.0.1:58118; SOCKS5 127.0.0.1:58117; SOCKS 127.0.0.1:58117";
 
 var domains = {
   "gimpshop.com": 1,
+  "google.com": 1,
+  "google.com.hk": 1,
+  "googleusercontent.com": 1,
+  "ggpht.com": 1,
+  "google-analytics.com": 1,
+  "googleapis.com": 1,
+  "googlesyndication.com": 1,
   "directcreative.com": 1,
   "speedpluss.org": 1,
   "mingpaovan.com": 1,
