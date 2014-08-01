@@ -1,5 +1,4 @@
 /**
- * gfwlist2pac 0.0.1 http://codelife.me
  * Generated: Mon, 10 Mar 2014 03:17:24 GMT
  * GFWList Last-Modified: Sat, 08 Mar 2014 08:05:44 GMT
  */
@@ -9,13 +8,13 @@ var P1 = "PROXY 10.12.23.31:58119; SOCKS5 10.12.23.31:58117; SOCKS 10.12.23.31:5
 var P2 = "PROXY 10.12.23.31:58118; SOCKS5 10.12.23.31:58117; SOCKS 10.12.23.31:58117";
 
 var domains = {
+  "haproxy.1wt.eu": 1,
+  "haproxy.org": 1,
   "gimpshop.com": 1,
   "googleapis.com": 1,
   "google-analytics.com": 1,
   "google.com": 1,
   "google.com.hk": 1,
-  "haproxy.1wt.eu": 1,
-  "haproxy.org": 1,
   "googleusercontent.com": 1,
   "googlesyndication.com": 1,
   "googlevideo.com": 1,
@@ -2457,7 +2456,13 @@ var domains = {
 };
 
 function FindProxyForURL(url, host) {
+<<<<<<< HEAD
     var D = "DIRECT; PROXY 10.12.23.31:58118";
+=======
+    var D = "DIRECT; PROXY 127.0.0.1:58118";
+    if (url.substring(0,4) != "http")
+      return D;
+>>>>>>> 97d8d44a76be88cacef437307d3e18b9c5a1ff3f
     var lastPos;
     do {
         if (domains.hasOwnProperty(host)) {
