@@ -5,7 +5,7 @@
 # mail: missdeer@dfordsoft.com
 # Created Time: 二  3/11 19:50:39 2014
 #########################################################################
-wget http://haproxy.1wt.eu/download/1.5/src/snapshot/haproxy-ss-LATEST.tar.gz 
+wget http://hp.codefast.tk/download/1.5/src/snapshot/haproxy-ss-LATEST.tar.gz 
 tar xzvf haproxy-ss-LATEST.tar.gz 
 cd $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")
 os=`uname -s`
