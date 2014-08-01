@@ -5,11 +5,24 @@
  */
 
 // proxy
-var P1 = "PROXY 127.0.0.1:58119; SOCKS5 127.0.0.1:58117; SOCKS 127.0.0.1:58117";
-var P2 = "PROXY 127.0.0.1:58118; SOCKS5 127.0.0.1:58117; SOCKS 127.0.0.1:58117";
+var P1 = "PROXY 10.12.23.31:58119; SOCKS5 10.12.23.31:58117; SOCKS 10.12.23.31:58117";
+var P2 = "PROXY 10.12.23.31:58118; SOCKS5 10.12.23.31:58117; SOCKS 10.12.23.31:58117";
 
 var domains = {
   "gimpshop.com": 1,
+  "googleapis.com": 1,
+  "google-analytics.com": 1,
+  "google.com": 1,
+  "google.com.hk": 1,
+  "haproxy.1wt.eu": 1,
+  "haproxy.org": 1,
+  "googleusercontent.com": 1,
+  "googlesyndication.com": 1,
+  "googlevideo.com": 1,
+  "googleadservices.com": 1,
+  "ggpht.com": 1,
+  "googlecode.com": 1,
+  "doubleclick.net": 1,
   "directcreative.com": 1,
   "speedpluss.org": 1,
   "mingpaovan.com": 1,
@@ -1417,7 +1430,6 @@ var domains = {
   "freenewscn.com": 1,
   "hkjp.org": 1,
   "stoneip.info": 1,
-  "googleusercontent.com": 1,
   "amazon.com": 1,
   "old-cat.net": 1,
   "shadow.ma": 1,
@@ -1656,7 +1668,6 @@ var domains = {
   "sendspace.com": 1,
   "proxomitron.info": 1,
   "allmovie.com": 1,
-  "google.com": 1,
   "badassjs.com": 1,
   "howtoforge.com": 1,
   "fanqiangyakexi.net": 1,
@@ -1715,7 +1726,6 @@ var domains = {
   "tl.gd": 1,
   "ourdearamy.com": 1,
   "epochtimes.fr": 1,
-  "google.com.hk": 1,
   "wapedia.mobi": 1,
   "allaboutalpha.com": 1,
   "graylog2.org": 1,
@@ -2299,7 +2309,7 @@ var domains = {
   "dabr.mobi": 1,
   "catch22.net": 1,
   "digitalnomadsproject.org": 1,
-  "github.com": 1,
+//  "github.com": 1,
   "blogspot.de": 1,
   "pcdvd.com.tw": 1,
   "getyouram.com": 1,
@@ -2447,7 +2457,7 @@ var domains = {
 };
 
 function FindProxyForURL(url, host) {
-    var D = "DIRECT; PROXY 127.0.0.1:58118";
+    var D = "DIRECT; PROXY 10.12.23.31:58118";
     var lastPos;
     do {
         if (domains.hasOwnProperty(host)) {
