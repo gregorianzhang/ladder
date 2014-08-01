@@ -76,15 +76,19 @@ binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
 if [[ "$os" == "win" ]]
 then
     haproxy -f ./haproxy.cfg -p ./haproxy.pid
+    del cow.$postfix
     wget -t0 -T10 -e http-proxy=127.0.0.1:58119 -O./cow.$postfix "$binary_url"
     taskkill /F /IM haproxy.exe /T
+    del cow.exe
     unzip cow.$postfix 
     curl -3 -L -o ./start.bat https://github.com/missdeer/ladder/raw/master/start.bat
     curl -3 -L -o ./stop.bat https://github.com/missdeer/ladder/raw/master/stop.bat
 else
     $(pwd)/haproxy -f $(pwd)/haproxy.cfg -p $(pwd)/haproxy.pid
+    rm -f cow.$postfix
     wget -t0 -T10 -e http-proxy=127.0.0.1:58119 -O./cow.$postfix "$binary_url"
     killall haproxy
+    rm -f cow
     gunzip cow.$postfix 
     chmod a+x cow 
 fi
