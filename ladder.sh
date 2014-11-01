@@ -31,7 +31,7 @@ git clone https://github.com/madeye/shadowsocks-libev.git
 cd shadowsocks-libev
 ./configure && make
 cd ..
-version=0.9.2
+version=0.9.4
 arch=`uname -m`
 case $arch in
     "x86_64")
@@ -64,12 +64,12 @@ esac
 cp shadowsocks-libev/src/ss-local* ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
-curl -3 -L -o ./cowrc https://github.com/missdeer/ladder/raw/master/cowrc
-curl -3 -L -o ./haproxy.cfg https://github.com/missdeer/ladder/raw/master/haproxy.cfg
-curl -3 -L -o ./ladder.pac https://github.com/missdeer/ladder/raw/master/ladder.pac
-curl -3 -L -o ./start.sh https://github.com/missdeer/ladder/raw/master/start.sh
+curl -3 -L -o ./cowrc https://raw.githubusercontent.com/missdeer/ladder/master/cowrc
+curl -3 -L -o ./haproxy.cfg https://raw.githubusercontent.com/missdeer/ladder/master/haproxy.cfg
+curl -3 -L -o ./ladder.pac https://raw.githubusercontent.com/missdeer/ladder/master/ladder.pac
+curl -3 -L -o ./start.sh https://raw.githubusercontent.com/missdeer/ladder/master/start.sh
 chmod a+x ./start.sh
-curl -3 -L -o ./stop.sh https://github.com/missdeer/ladder/raw/master/stop.sh
+curl -3 -L -o ./stop.sh https://raw.githubusercontent.com/missdeer/ladder/master/stop.sh
 chmod a+x ./stop.sh
 bin=cow-$os$arch-$version
 binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
@@ -81,8 +81,8 @@ then
     taskkill /F /IM haproxy.exe /T
     del cow.exe
     unzip cow.$postfix 
-    curl -3 -L -o ./start.bat https://github.com/missdeer/ladder/raw/master/start.bat
-    curl -3 -L -o ./stop.bat https://github.com/missdeer/ladder/raw/master/stop.bat
+    curl -3 -L -o ./start.bat https://raw.githubusercontent.com/missdeer/ladder/master/start.bat
+    curl -3 -L -o ./stop.bat https://raw.githubusercontent.com/missdeer/ladder/master/stop.bat
 else
     $(pwd)/haproxy -f $(pwd)/haproxy.cfg -p $(pwd)/haproxy.pid
     rm -f cow.$postfix
