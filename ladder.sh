@@ -64,12 +64,12 @@ esac
 cp shadowsocks-libev/src/ss-local* ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
-curl -3 -L -o ./cowrc https://raw.githubusercontent.com/missdeer/ladder/master/cowrc
-curl -3 -L -o ./haproxy.cfg https://raw.githubusercontent.com/missdeer/ladder/master/haproxy.cfg
-curl -3 -L -o ./ladder.pac https://raw.githubusercontent.com/missdeer/ladder/master/ladder.pac
-curl -3 -L -o ./start.sh https://raw.githubusercontent.com/missdeer/ladder/master/start.sh
+wget -t0 -T10 -O ./cowrc https://raw.githubusercontent.com/missdeer/ladder/master/cowrc
+wget -t0 -T10 -O ./haproxy.cfg https://raw.githubusercontent.com/missdeer/ladder/master/haproxy.cfg
+wget -t0 -T10 -O ./ladder.pac https://raw.githubusercontent.com/missdeer/ladder/master/ladder.pac
+wget -t0 -T10 -O ./start.sh https://raw.githubusercontent.com/missdeer/ladder/master/start.sh
 chmod a+x ./start.sh
-curl -3 -L -o ./stop.sh https://raw.githubusercontent.com/missdeer/ladder/master/stop.sh
+wget -t0 -T10 -O ./stop.sh https://raw.githubusercontent.com/missdeer/ladder/master/stop.sh
 chmod a+x ./stop.sh
 bin=cow-$os$arch-$version
 binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
@@ -81,8 +81,8 @@ then
     taskkill /F /IM haproxy.exe /T
     del cow.exe
     unzip cow.$postfix 
-    curl -3 -L -o ./start.bat https://raw.githubusercontent.com/missdeer/ladder/master/start.bat
-    curl -3 -L -o ./stop.bat https://raw.githubusercontent.com/missdeer/ladder/master/stop.bat
+    wget -t0 -T10 -O ./start.bat https://raw.githubusercontent.com/missdeer/ladder/master/start.bat
+    wget -t0 -T10 -O ./stop.bat https://raw.githubusercontent.com/missdeer/ladder/master/stop.bat
 else
     $(pwd)/haproxy -f $(pwd)/haproxy.cfg -p $(pwd)/haproxy.pid
     rm -f cow.$postfix
