@@ -72,22 +72,22 @@ chmod a+x ./start.sh
 wget -t0 -T10 -O ./stop.sh https://raw.githubusercontent.com/missdeer/ladder/master/stop.sh
 chmod a+x ./stop.sh
 bin=cow-$os$arch-$version
-binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
+binary_url="http://hp.codefast.tk/cow/$bin.$postfix"
 if [[ "$os" == "win" ]]
 then
-    haproxy -f ./haproxy.cfg -p ./haproxy.pid
+    #haproxy -f ./haproxy.cfg -p ./haproxy.pid
     del cow.$postfix
-    wget -t0 -T10 -e http-proxy=127.0.0.1:58119 -O./cow.$postfix "$binary_url"
-    taskkill /F /IM haproxy.exe /T
+    wget -t0 -T10 -O./cow.$postfix "$binary_url"
+    #taskkill /F /IM haproxy.exe /T
     del cow.exe
     unzip cow.$postfix 
     wget -t0 -T10 -O ./start.bat https://raw.githubusercontent.com/missdeer/ladder/master/start.bat
     wget -t0 -T10 -O ./stop.bat https://raw.githubusercontent.com/missdeer/ladder/master/stop.bat
 else
-    $(pwd)/haproxy -f $(pwd)/haproxy.cfg -p $(pwd)/haproxy.pid
+    #$(pwd)/haproxy -f $(pwd)/haproxy.cfg -p $(pwd)/haproxy.pid
     rm -f cow.$postfix
-    wget -t0 -T10 -e http-proxy=127.0.0.1:58119 -O./cow.$postfix "$binary_url"
-    killall haproxy
+    wget -t0 -T10 -O./cow.$postfix "$binary_url"
+    #killall haproxy
     rm -f cow
     gunzip cow.$postfix 
     chmod a+x cow 
