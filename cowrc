@@ -73,14 +73,12 @@ listen = http://0.0.0.0:58118
 #   proxy = cow://method:passwd@1.2.3.4:4321
 #
 #   authinfo 与 shadowsocks 相同
-proxy = socks5://127.0.0.1:58117
-#proxy = ss://rc4:qwersdSERsdf@46.137.233.181:51280
-#proxy = ss://rc4:qwersdSERsdf@54.248.202.250:51280
-#proxy = ss://rc4:qwersdSERsdf@54.216.38.67:51280
-#proxy = ss://rc4:qwersdSERsdf@54.235.31.183:51280
-#proxy = ss://rc4:qwersdSERsdf@54.241.100.182:51280
-#proxy = ss://rc4:qwersdSERsdf@167.8.36.11:51280
-#proxy = ss://rc4:qwersdSERsdf@50.62.8.35:51280
+#proxy = socks5://127.0.0.1:58117
+proxy = ss://rc4:qwersdSERsdf@46.137.233.181:51280
+proxy = ss://rc4:qwersdSERsdf@54.248.202.250:51280
+proxy = ss://rc4:qwersdSERsdf@54.216.38.67:51280
+proxy = ss://rc4:qwersdSERsdf@54.235.31.183:51280
+proxy = ss://rc4:qwersdSERsdf@54.241.100.182:51280
 
 #############################
 # 执行 ssh 命令创建 SOCKS5 代理
