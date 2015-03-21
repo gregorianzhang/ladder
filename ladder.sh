@@ -61,8 +61,10 @@ case $os in
         postfix="zip"
         ;;
 esac
-cp shadowsocks-libev/src/ss-local* ./
-cp shadowsocks-libev/src/ss-server* ./
+cp shadowsocks-libev/src/ss-local ./
+cp shadowsocks-libev/src/ss-server ./
+cp shadowsocks-libev/src/ss-redir ./
+cp shadowsocks-libev/src/ss-tunnel ./
 cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
 rm -rf haproxy-ss-* shadowsocks-libev/
 wget -t0 -T10 -O ./cowrc https://raw.githubusercontent.com/missdeer/ladder/master/cowrc
