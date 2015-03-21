@@ -72,7 +72,7 @@ chmod a+x ./start.sh
 wget -t0 -T10 -O ./stop.sh https://raw.githubusercontent.com/missdeer/ladder/master/stop.sh
 chmod a+x ./stop.sh
 bin=cow-$os$arch-$version
-binary_url="http://hp.codefast.tk/cow/$bin.$postfix"
+binary_url="http://dl.chenyufei.info/cow/$bin.$postfix"
 if [[ "$os" == "win" ]]
 then
     #haproxy -f ./haproxy.cfg -p ./haproxy.pid
