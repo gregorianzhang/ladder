@@ -2456,13 +2456,10 @@ var domains = {
 };
 
 function FindProxyForURL(url, host) {
-<<<<<<< HEAD
-    var D = "DIRECT; PROXY 10.12.23.31:58118";
-=======
     var D = "DIRECT; PROXY 127.0.0.1:58118";
     if (url.substring(0,4) != "http")
       return D;
->>>>>>> 97d8d44a76be88cacef437307d3e18b9c5a1ff3f
+      
     var lastPos;
     do {
         if (domains.hasOwnProperty(host)) {
