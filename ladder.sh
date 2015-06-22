@@ -31,7 +31,7 @@ git clone https://github.com/madeye/shadowsocks-libev.git
 cd shadowsocks-libev
 ./configure && make
 cd ..
-version=0.9.4
+version=0.9.6
 arch=`uname -m`
 case $arch in
     "x86_64")
