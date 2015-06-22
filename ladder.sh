@@ -5,28 +5,28 @@
 # mail: missdeer@dfordsoft.com
 # Created Time: 二  3/11 19:50:39 2014
 #########################################################################
-curl -L -O http://haproxy.1wt.eu/download/1.5/src/snapshot/haproxy-ss-LATEST.tar.gz 
-tar xzvf haproxy-ss-LATEST.tar.gz 
-cd $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")
+#curl -L -O http://haproxy.1wt.eu/download/1.5/src/snapshot/haproxy-ss-LATEST.tar.gz 
+#tar xzvf haproxy-ss-LATEST.tar.gz 
+#cd $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")
 os=`uname -s`
-case $os in
-    "FreeBSD")
-        gmake USE_OPENSSL=1 TARGET=freebsd
-        ;;
-    "OpenBSD")
-        make USE_OPENSSL=1 TARGET=openbsd
-        ;;
-    "CYGWIN_NT-6.1" | "CYGWIN_NT-6.0" | "CYGWIN_NT-7.0")
-        make USE_OPENSSL=1 TARGET=cygwin
-        ;;
-    "Linux")
-        make USE_OPENSSL=1 TARGET=linux2628
-        ;;
-    *)
-        make USE_OPENSSL=1 TARGET=generic
-        ;;
-esac
-cd ..
+#case $os in
+#    "FreeBSD")
+#        gmake USE_OPENSSL=1 TARGET=freebsd
+#        ;;
+#    "OpenBSD")
+#        make USE_OPENSSL=1 TARGET=openbsd
+#        ;;
+#    "CYGWIN_NT-6.1" | "CYGWIN_NT-6.0" | "CYGWIN_NT-7.0")
+#        make USE_OPENSSL=1 TARGET=cygwin
+#        ;;
+#    "Linux")
+#        make USE_OPENSSL=1 TARGET=linux2628
+#        ;;
+#    *)
+#        make USE_OPENSSL=1 TARGET=generic
+#        ;;
+#esac
+#cd ..
 git clone https://github.com/madeye/shadowsocks-libev.git
 cd shadowsocks-libev
 ./configure && make
@@ -65,8 +65,8 @@ cp shadowsocks-libev/src/ss-local ./
 cp shadowsocks-libev/src/ss-server ./
 cp shadowsocks-libev/src/ss-redir ./
 cp shadowsocks-libev/src/ss-tunnel ./
-cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
-rm -rf haproxy-ss-* shadowsocks-libev/
+#cp $(ls haproxy* | grep -o "haproxy\-ss\-[0-9]\{8,8\}")/haproxy* ./
+#rm -rf haproxy-ss-* shadowsocks-libev/
 wget -t0 -T10 -O ./cowrc https://raw.githubusercontent.com/missdeer/ladder/master/cowrc
 wget -t0 -T10 -O ./haproxy.cfg https://raw.githubusercontent.com/missdeer/ladder/master/haproxy.cfg
 wget -t0 -T10 -O ./ladder.pac https://raw.githubusercontent.com/missdeer/ladder/master/ladder.pac
